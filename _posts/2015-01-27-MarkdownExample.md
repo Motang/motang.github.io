@@ -1,6 +1,10 @@
 ---
 layout: post
-title: MarkdownExample
+title: Markdown Example
+category: example
+tags: [Markdown, Markdown介绍, Markdown Example]
+comments: true
+share: true
 ---
 
 <meta charset="utf-8" />
