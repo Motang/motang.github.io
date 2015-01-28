@@ -1,3 +1,8 @@
+---
+layout: post
+title: MarkdownExample
+---
+
 <meta charset="utf-8" />
 
 > ## 这是一个标题。
@@ -14,7 +19,7 @@ This is an H2
 # This is an H1
 ## This is an H2
 ###### This is an H6
->     return shell_exec("echo $input | $markdown_script");
+     return shell_exec("echo $input | $markdown_script");
 
 
 [I'm an inline-style link](https://www.google.com)
