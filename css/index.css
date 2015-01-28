@@ -1,0 +1,48 @@
+*{margin:0; padding:0; text-align:center; }
+img{ border:none; }
+a{color:#1F8AC4; font-family:Arial, Helvetica, sans-serif; font-size:12px; text-decoration:none; }
+a:hover{text-decoration:none; color:#FF0000; }
+ul{list-style-type:none; }
+ul li{list-style-type:none; float:left; margin-right:20px;}
+body{ background:url(../images/bg.gif) center top repeat-x #fff; overflow-x: hidden;}
+div{margin:0 auto; }
+.clearfix:after {
+content:".";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+
+
+.top{width:100%; height:53px; padding:20px;  margin:1px 0px; font-size:32px; font-weight:bold; color:#1F8AC4; text-align:center; font-family:Arial, Helvetica, sans-serif;}
+
+.menu{ margin:0 10%; height:29px; }
+.menu li{ width:15%; height:29px; line-height:29px;  font-weight:bold; text-align:center; margin:0px; }
+.menu a{ height:29px; line-height:29px; display:block; font-size:14px;}
+.menu .split{ border-left:1px #FF0000 solid; line-height:29px; width:1px; }
+
+.content{ margin:30px; margin-top:50px ; }
+*+.content ul{ width:60%; margin:30px 20%;}
+@media (max-width: 480px){
+	.content ul{ width:80%; margin:30px 10%;}
+}
+@media (min-width: 480px) and (max-width: 970px){
+	.content ul{ width:70%; margin:20px 15%;}
+}
+@media (min-width: 970px){
+	.content ul{ width:60%; margin:20px 20%;}
+}
+.content li{ float:none; height:40px; border-bottom:1px #999999 dashed ; line-height: 40px; text-align:left; }
+.content li a{ margin-left:8px;  font:Arial, Helvetica, sans-serif; font-size:14px;}
+.content li span{ display:block; float:right;  font:Arial, Helvetica, sans-serif; font-size:12px; color:#FF0000; text-align:right; margin-right:5px ; overflow:hidden; }
+
+.content-detail{ margin:30px; margin-top:50px; height:auto!important; height:200px; min-height:200px; }
+.content-detail .right{ float:left; width:25%;}
+.content-detail .first { border-bottom:1px #CCCCCC solid;  }
+.content-detail .right li{ color:#1F8AC4; float:none;height:29px; line-height:29px;  font-weight:bold; text-align:center; margin:0px; }
+.content-detail .left{ float:left; width:65%; font-family:Arial, Helvetica, sans-serif; font-size:12px; }
+
+
+.bottom .spl{  height:1px; border-bottom:1px #999999 solid; }
+.bottom p{ font:Arial, Helvetica, sans-serif ; font-size:12px; color:#666666; margin-top:15px;}
