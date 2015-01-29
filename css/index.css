@@ -40,8 +40,8 @@ visibility:hidden;
 .content-detail .right{ float:left; width:25%;}
 .content-detail .first { border-bottom:1px #CCCCCC solid;  }
 .content-detail .right li{ color:#1F8AC4; float:none;height:29px; line-height:29px;  font-weight:bold; text-align:center; margin:0px; }
-.content-detail .left{ float:left; width:65%; font-family:Arial, Helvetica, sans-serif; font-size:12px; }
-
+.content-detail .left{ float:left; width:65%; font-family:Arial, Helvetica, sans-serif; font-size:12px;text-align:left; }
+.content-detail .left li{ float:none;}
 
 .bottom .spl{  height:1px; border-bottom:1px #999999 solid; text-align:center;}
 .bottom p{ font:Arial, Helvetica, sans-serif ; font-size:12px; color:#666666; margin-top:15px; text-align:center;}
