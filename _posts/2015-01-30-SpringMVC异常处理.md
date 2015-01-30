@@ -97,10 +97,10 @@ public class TestController {
 ```
 
 ### 3.3 测试效果 ###
-在浏览器上输入 [http://localhost:8080/test/exception.json](http://localhost:8080/test/exception.json “结果会以json数据返回”) 返回如下
+在浏览器上输入 [http://localhost:8080/test/exception.json](http://localhost:8080/test/exception.json "结果会以json数据返回") 返回如下
 
 ```js
 { "message":null, "status":"1" }
 ```
 
-在浏览器上输入[http://localhost:8080/test/exceptio](http://localhost:8080/test/exception “结果会以html返回”) 将跳入到错误页面
+在浏览器上输入[http://localhost:8080/test/exceptio](http://localhost:8080/test/exception "结果会以html返回") 将跳入到错误页面
