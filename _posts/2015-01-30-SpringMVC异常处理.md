@@ -103,4 +103,4 @@ public class TestController {
 { "message":null, "status":"1" }
 ```
 
-在浏览器上输入[http://localhost:8080/test/exceptio](http://localhost:8080/test/exception) 结果会以html返回,将跳入到错误页面
+在浏览器上输入[http://localhost:8080/test/exception](http://localhost:8080/test/exception) 结果会以html返回,将跳入到错误页面
