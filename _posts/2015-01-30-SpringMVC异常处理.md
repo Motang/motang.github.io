@@ -14,6 +14,7 @@ share: true
 ## 1. SpringMVC异常处理笔记 ##
 SpringMVC异常处理核心接口 - HandlerExceptionResolver接口
 三个实现
+
     org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver
     org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver
     org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver
@@ -25,6 +26,7 @@ DefaultHandlerExceptionResolver：<annotation-driven/>配置中定义的HandlerE
 ResponseStatusExceptionResolver：<annotation-driven/>配置中定义的HandlerExceptionResolver实现类之一。该类的doResolveException方法主要在异常及异常父类中找到@ResponseStatus注解，然后使用这个注解的属性进行处理。
 
 为什么ExceptionHandlerExceptionResolver、DefaultHandlerExceptionResolver、ResponseStatusExceptionResolver是<annotation-driven/>配置中定义的HandlerExceptionResolver实现类。我们看下<annotation-driven/>配置解析类AnnotationDrivenBeanDefinitionParser中部分代码片段 line247：
+
     RootBeanDefinition exceptionHandlerExceptionResolver = new RootBeanDefinition(ExceptionHandlerExceptionResolver.class);
     exceptionHandlerExceptionResolver.setSource(source);
     exceptionHandlerExceptionResolver.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
@@ -50,4 +52,4 @@ ExceptionHandlerExceptionResolver处理过程总结一下：根据用户调用Co
 
 ResponseStatusExceptionResolver 主要在异常及异常父类中找到@ResponseStatus注解。@ResponseStatus注解  让1个方法或异常有状态码(status)和理由(reason)返回。这个状态码是http响应的状态码。
 
-DefaultHandlerExceptionResolver 如果有些异常比如NoSuchRequestHandlingMethodException会发生404错误。，没配置@ExceptionHandler以及该异常没有@ResponseStatus注解，最终由DefaultHandlerExceptionResolver解析
+DefaultHandlerExceptionResolver 如果有些异常比如NoSuchRequestHandlingMethodException会发生404错误。没配置@ExceptionHandler以及该异常没有@ResponseStatus注解，最终由DefaultHandlerExceptionResolver解析
