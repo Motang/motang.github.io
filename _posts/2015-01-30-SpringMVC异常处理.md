@@ -50,9 +50,30 @@ ResponseStatusExceptionResolver：<annotation-driven/>配置中定义的HandlerE
 ## 2. 总结 ##
 ExceptionHandlerExceptionResolver处理过程总结一下：根据用户调用Controller中相应的方法得到HandlerMethod，之后构造ExceptionHandlerMethodResolver，构造ExceptionHandlerMethodResolver有2种选择，
 
->1.通过HandlerMethod拿到Controller，找出Controller中带有@ExceptionHandler注解的方法(局部) 
->2.找到@ControllerAdvice注解配置的类中的@ExceptionHandler注解的方法(全局)。这2种方式构造的ExceptionHandlerMethodResolver中都有1个key为Throwable，value为Method的缓存。之后通过发生的异常找出对应的Method，然后调用这个方法进行处理。这里异常还有个优先级的问题，比如发生的是NullPointerException，但是声明的异常有Throwable和Exception，这时候ExceptionHandlerMethodResolver找Method的时候会根据异常的最近继承关系找到继承深度最浅的那个异常，即Exception
+>通过HandlerMethod拿到Controller，找出Controller中带有@ExceptionHandler注解的方法(局部) 
+>找到@ControllerAdvice注解配置的类中的@ExceptionHandler注解的方法(全局)。这2种方式构造的ExceptionHandlerMethodResolver中都有1个key为Throwable，value为Method的缓存。之后通过发生的异常找出对应的Method，然后调用这个方法进行处理。这里异常还有个优先级的问题，比如发生的是NullPointerException，但是声明的异常有Throwable和Exception，这时候ExceptionHandlerMethodResolver找Method的时候会根据异常的最近继承关系找到继承深度最浅的那个异常，即Exception
+
 
 ResponseStatusExceptionResolver 主要在异常及异常父类中找到@ResponseStatus注解。@ResponseStatus注解  让1个方法或异常有状态码(status)和理由(reason)返回。这个状态码是http响应的状态码。
 
 DefaultHandlerExceptionResolver 如果有些异常比如NoSuchRequestHandlingMethodException会发生404错误。没配置@ExceptionHandler以及该异常没有@ResponseStatus注解，最终由DefaultHandlerExceptionResolver解析
+
+## 3. 例子 ##
+```java
+@ControllerAdvice
+public class CustomizeExceptionHandler {
+    private Logger logger = LoggerFactory.getLogger(CustomizeExceptionHandler.class);
+    
+    @ExceptionHandler(value={RuntimeException.class, Exception.class})
+    public Map<String, Object> returnNoPage(Throwable ex) {
+        
+        logger.error("", ex);
+        
+        Map<String, Object> responseMap = new HashMap<String, Object>();
+        responseMap.put("status", "false");
+        responseMap.put("message", ex.getMessage());
+        return responseMap;
+    }
+
+}
+```
