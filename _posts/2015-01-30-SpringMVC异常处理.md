@@ -59,6 +59,7 @@ ResponseStatusExceptionResolver 主要在异常及异常父类中找到@Response
 DefaultHandlerExceptionResolver 如果有些异常比如NoSuchRequestHandlingMethodException会发生404错误。没配置@ExceptionHandler以及该异常没有@ResponseStatus注解，最终由DefaultHandlerExceptionResolver解析
 
 ## 3. 例子 ##
+### 声明全局ExceptionHandler ###
 全局@ExceptionHandler注解的异常处理handler
 
 ```java
@@ -80,6 +81,7 @@ public class CustomizeExceptionHandler {
 }
 ```
 
+### 测试Controller ###
 SpringMVC中TestController
 
 ```java
@@ -93,10 +95,11 @@ public class TestController {
 }
 ```
 
-在浏览器上输入[http://localhost:8080/test/exception.json](http://localhost:8080/test/exception.json 结果会以json数据返回)返回如下
+### 测试效果 ###
+在浏览器上输入 [http://localhost:8080/test/exception.json](http://localhost:8080/test/exception.json “结果会以json数据返回”) 返回如下
 
 ```js
 { "message":null, "status":"1" }
 ```
 
-在浏览器上输入[http://localhost:8080/test/exceptio](http://localhost:8080/test/exception  结果会以html返回) 将跳入到错误页面
+在浏览器上输入[http://localhost:8080/test/exceptio](http://localhost:8080/test/exception “结果会以html返回”) 将跳入到错误页面
