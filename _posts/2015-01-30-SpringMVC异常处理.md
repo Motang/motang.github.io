@@ -60,7 +60,7 @@ DefaultHandlerExceptionResolver 如果有些异常比如NoSuchRequestHandlingMet
 
 ## 3. 例子 ##
 全局@ExceptionHandler注解的异常处理handler
-```java
+```
 @ControllerAdvice
 public class CustomizeExceptionHandler {
     private Logger logger = LoggerFactory.getLogger(CustomizeExceptionHandler.class);
@@ -80,7 +80,7 @@ public class CustomizeExceptionHandler {
 ```
 
 SpringMVC中TestController
-```java
+```
 @RequestMapping("/test")
 @Controller
 public class TestController {
@@ -92,7 +92,7 @@ public class TestController {
 ```
 
 在浏览器上输入[http://localhost:8080/test/exception.json](http://localhost:8080/test/exception.json 结果会以json数据返回)返回如下
-```js
+```
 { "message":null, "status":"1" }
 ```
 
