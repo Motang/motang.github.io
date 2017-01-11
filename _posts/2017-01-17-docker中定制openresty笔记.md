@@ -16,7 +16,7 @@ share: true
 
 ## 步骤 ##
 
-> 1. 编写Dockerfile，内容如下，目的拉取docker的openresty的镜像，创建新的openresty工作目录，并启动
+> 编写Dockerfile，内容如下，目的拉取docker的openresty的镜像，创建新的openresty工作目录，并启动
 
     FROM openresty/openresty:latest
 
@@ -27,7 +27,8 @@ share: true
 	RUN  mkdir /usr/local/openresty/workspace
 
 	ENTRYPOINT ["/usr/local/openresty/bin/openresty", "-p", "/usr/local/openresty/workspace", "-g", "daemon off;"]
-> 2. 在本机新编辑~/openresty/test/conf/nginx.conf文件，内容如下
+
+> 在本机新编辑~/openresty/test/conf/nginx.conf文件，内容如下
 
 ```lua
 worker_processes  1;        #nginx worker 数量
@@ -78,12 +79,12 @@ http {
 }
 ```
 
-> 3. 进入Dockerfile文件所在的目录，执行下面的命令
+> 进入Dockerfile文件所在的目录，执行下面的命令
 
     docker build -t morly/myopenresty:1.0 -f Dockerfile .
 
-> 4. 执行运行下面
+> 执行运行下面
 
     docker run --name openresty-test -v /home/morly/openresty/test:/usr/local/openresty/workspace -p 80:80 -d morly/myopenresty:1.0
 
-> 5. 测试
+> 测试, http://localhost/kdzs/index.html  http://localhost/api/captcha/captchaImage
