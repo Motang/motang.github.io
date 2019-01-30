@@ -20,6 +20,12 @@ This is an H1
 This is an H2
 -------------
 
+- 反思：
+- 定位：
+- 寻找平台：
+- 找人内推：
+- 面试谈：
+
 # This is an H1
 ## This is an H2
 ###### This is an H6
