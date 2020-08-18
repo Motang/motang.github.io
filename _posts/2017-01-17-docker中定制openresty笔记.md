@@ -20,7 +20,7 @@ share: true
 
     FROM openresty/openresty:latest
 
-	MAINTAINER Morly Tang <tangjimo@foonsu.com>
+	MAINTAINER Morly Tang <morletang@qq.com>
 
 	# 1) Run OpenResty
 
